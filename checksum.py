@@ -5,8 +5,8 @@ import hashlib
 
 
 def md5hash(path):
-    with open(path, 'rb', True) as f:
-        return hashlib.md5(f.read(2 * 1024 * 1024)).hexdigest()
+    with open(path, 'rb', 2 * 1024 * 1024) as f:
+        return hashlib.md5(f.read()).hexdigest()
 
 
 for root, dirs, files in os.walk('/share/data', True):
